@@ -129,15 +129,29 @@ home_keyboard_pm = InlineKeyboardMarkup(
 
 home_text_pm = (
     f"Hey there! My name is {BOT_NAME}. I can manage your "
-    "group like My house , protect like oggy from spammers like coakcroaches ......"
-    
-   "add me to your group"
+    "group like My house , protect like oggy from spammers like coakcroaches ."
+    " feel free to add me "
+
   
   
    
   
    "Hit /help to find out more about how to use me to my full potential. "
 )
+
+
+keyboard = InlineKeyboardMarkup(
+       [
+        [
+         InlineKeyboardButton(
+                text="Click here for Help ❓",
+                url=f"t.me/{BOT_USERNAME}?start=help",
+            ),
+        ],
+    ]
+)
+
+      
 @app.on_message(filters.command("start"))
 async def start(_, message):
     if message.chat.type != "private":
