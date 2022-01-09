@@ -115,7 +115,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
         [
             
             InlineKeyboardButton(
-                text="Support 👨", url="http://t.me/WBBSupport"
+                text="Support 👨", url="http://t.me/jack_support"
             ),
         ],
         [
@@ -129,40 +129,15 @@ home_keyboard_pm = InlineKeyboardMarkup(
 
 home_text_pm = (
     f"Hey there! My name is {BOT_NAME}. I can manage your "
-    + "group like My house , protect like oggy from spammers like coakcroaches ......"
+    "group like My house , protect like oggy from spammers like coakcroaches ......"
     
    "add me to your group"
   
   
-   " Hit /help to find out more about how to use me to my full potential. "
+   
+  
+   "Hit /help to find out more about how to use me to my full potential. "
 )
-
-
-keyboard = InlineKeyboardMarkup(
-    [
-        [
-            
-            InlineKeyboardButton(
-                text="UPDATES",
-                url="https://t.me/jack_update",
-            ),
-        ],
-        [
-            
-            InlineKeyboardButton(
-                text="Support 👨", url="http://t.me/WBBSupport"
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="Add Me To Your Group 🎉",
-                url=f"http://t.me/{BOT_USERNAME}?startgroup=new",
-            )
-        ],
-    ]
-)
-
-
 @app.on_message(filters.command("start"))
 async def start(_, message):
     if message.chat.type != "private":
