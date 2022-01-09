@@ -106,19 +106,14 @@ async def start_bot():
 home_keyboard_pm = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(
-                text="Commands ❓", callback_data="bot_commands"
-            ),
+            
             InlineKeyboardButton(
                 text="UPDATES",
                 url="https://t.me/jack_update",
             ),
         ],
         [
-            InlineKeyboardButton(
-                text="System Stats 🖥",
-                callback_data="stats_callback",
-            ),
+            
             InlineKeyboardButton(
                 text="Support 👨", url="http://t.me/WBBSupport"
             ),
@@ -134,32 +129,35 @@ home_keyboard_pm = InlineKeyboardMarkup(
 
 home_text_pm = (
     f"Hey there! My name is {BOT_NAME}. I can manage your "
-    + "group like My house , protect like oggy from spammers like coakcroaches"
-    + "add me to your group"
+    + "group like My house , protect like oggy from spammers like coakcroaches ......"
+    
+   "add me to your group"
   
   
-    + " Hit /help to find out more about how to use me to my full potential. "
+   " Hit /help to find out more about how to use me to my full potential. "
 )
 
 
 keyboard = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(
-                text="Help ❓",
-                url=f"t.me/{BOT_USERNAME}?start=help",
-            ),
+            
             InlineKeyboardButton(
                 text="UPDATES",
                 url="https://t.me/jack_update",
             ),
         ],
         [
+            
             InlineKeyboardButton(
-                text="System Stats 💻",
-                callback_data="stats_callback",
+                text="Support 👨", url="http://t.me/WBBSupport"
             ),
-            InlineKeyboardButton(text="Support 👨", url="t.me/WBBSupport"),
+        ],
+        [
+            InlineKeyboardButton(
+                text="Add Me To Your Group 🎉",
+                url=f"http://t.me/{BOT_USERNAME}?startgroup=new",
+            )
         ],
     ]
 )
