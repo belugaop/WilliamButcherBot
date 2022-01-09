@@ -110,8 +110,8 @@ home_keyboard_pm = InlineKeyboardMarkup(
                 text="Commands ❓", callback_data="bot_commands"
             ),
             InlineKeyboardButton(
-                text="Repo 🛠",
-                url="https://github.com/thehamkercat/WilliamButcherBot",
+                text="UPDATES",
+                url="https://t.me/jack_update",
             ),
         ],
         [
@@ -134,8 +134,11 @@ home_keyboard_pm = InlineKeyboardMarkup(
 
 home_text_pm = (
     f"Hey there! My name is {BOT_NAME}. I can manage your "
-    + "group with lots of useful features, feel free to "
-    + "add me to your group."
+    + "group like My house , protect like oggy from spammers like coakcroaches"
+    + "add me to your group"
+  
+  
+    + " Hit /help to find out more about how to use me to my full potential. "
 )
 
 
@@ -147,8 +150,8 @@ keyboard = InlineKeyboardMarkup(
                 url=f"t.me/{BOT_USERNAME}?start=help",
             ),
             InlineKeyboardButton(
-                text="Repo 🛠",
-                url="https://github.com/thehamkercat/WilliamButcherBot",
+                text="UPDATES",
+                url="https://t.me/jack_update",
             ),
         ],
         [
