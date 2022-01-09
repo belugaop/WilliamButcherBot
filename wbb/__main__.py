@@ -115,7 +115,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
         [
             
             InlineKeyboardButton(
-                text="Support 👨", url="http://t.me/jack_support"
+                text="Support 👨", url="https://t.me/jack_support_1"
             ),
         ],
         [
