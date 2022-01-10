@@ -130,10 +130,8 @@ home_keyboard_pm = InlineKeyboardMarkup(
 home_text_pm = (
     f"Hey there! My name is {BOT_NAME}. I can manage your "
     "group like My house , protect like oggy from spammers like coakcroaches ."
-    <br><br>" feel free to add me"
-    <br><br> "Hit /help to find out more about how to use me to my full potential. "
-    <br>  "Join my <a href=https://t.me/jack_update"> news channel </a> "to get information on all the latest updates."
-    <br>  "Join my <a href=https://t.me/jack_support_1"> Support 👨 </a> "to get to get support "
+    "feel free to add me"
+    "Hit /help to find out more about how to use me to my full potential. "
 )
 
 
