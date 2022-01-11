@@ -127,13 +127,11 @@ home_keyboard_pm = InlineKeyboardMarkup(
     ]
 )
 
-home_text_pm = (
-    f"Hey there! My name is {BOT_NAME}. I can manage your "
-    "group like My house , protect like oggy from spammers like coakcroaches ."
-    "feel free to add me"
-    "Hit /help to find out more about how to use me to my full potential. "
-)
+home_text_pm =  """Hey There! My name is *Group Master*.
+I'm here to help you manage your groups like My house , protect like oggy from spammers like coakcroaches
 
+Hit /help to find out more about how to use me to my full potential.
+"""
 
 keyboard = InlineKeyboardMarkup(
        [
