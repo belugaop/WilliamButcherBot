@@ -127,7 +127,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
     ]
 )
 
-home_text_pm =  """Hey There! My name is *Group Master*.
+home_text_pm =  """Hey There! My name is *JACK*.
 I'm here to help you manage your groups like My house , protect like oggy from spammers like coakcroaches
 
 Hit /help to find out more about how to use me to my full potential.
