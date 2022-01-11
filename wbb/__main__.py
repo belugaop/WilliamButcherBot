@@ -127,7 +127,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
     ]
 )
 
-home_text_pm =  """Hey There! My name is *JACK*.
+home_text_pm =  """Hey There! My name is JACK.
 I'm here to help you manage your groups like My house , protect like oggy from spammers like coakcroaches
 
 Hit /help to find out more about how to use me to my full potential.
@@ -240,6 +240,7 @@ async def help_parser(name, keyboard=None):
     return (
         """Hello {first_name}, My name is {bot_name}.
 I'm a group management bot with some useful features.
+
 You can choose an option below, by clicking a button.
 Also you can ask anything in Support Group.
 """.format(
@@ -279,12 +280,9 @@ async def help_button(client, query):
     top_text = f"""
 Hello {query.from_user.first_name}, My name is {BOT_NAME}.
 I'm a group management bot with some usefule features.
+
 You can choose an option below, by clicking a button.
 Also you can ask anything in Support Group.
-
-General command are:
- - /start: Start the bot
- - /help: Give this message
  """
     if mod_match:
         module = (mod_match.group(1)).replace(" ", "_")
