@@ -104,14 +104,8 @@ async def current_chat_permissions(chat_id):
         perms.append("can_send_messages")
     if perm.can_send_media_messages:
         perms.append("can_send_media_messages")
-    if perm.can_send_stickers:
-        perms.append("can_send_stickers")
-    if perm.can_send_animations:
-        perms.append("can_send_animations")
-    if perm.can_send_games:
-        perms.append("can_send_games")
-    if perm.can_use_inline_bots:
-        perms.append("can_use_inline_bots")
+    if perm.can_send_other_messages:
+        perms.append("can_send_other_messages")
     if perm.can_add_web_page_previews:
         perms.append("can_add_web_page_previews")
     if perm.can_send_polls:
@@ -201,7 +195,7 @@ async def kickFunc(_, message: Message):
 **Reason:** {reason or 'No Reason Provided.'}"""
     if message.command[0][0] == "d":
         await message.reply_to_message.delete()
-    await message.chat.kick_member(user_id)
+    await message.chat.ban_member(user_id)
     await message.reply_text(msg)
     await asyncio.sleep(1)
     await message.chat.unban_member(user_id)
@@ -259,7 +253,7 @@ async def banFunc(_, message: Message):
             msg += f"**Reason:** {temp_reason}"
         try:
             if len(time_value[:-1]) < 3:
-                await message.chat.kick_member(user_id, until_date=temp_ban)
+                await message.chat.ban_member(user_id, until_date=temp_ban)
                 await message.reply_text(msg)
             else:
                 await message.reply_text("You can't use more than 99")
@@ -268,7 +262,7 @@ async def banFunc(_, message: Message):
         return
     if reason:
         msg += f"**Reason:** {reason}"
-    await message.chat.kick_member(user_id)
+    await message.chat.ban_member(user_id)
     await message.reply_text(msg)
 
 
@@ -387,12 +381,18 @@ async def demote(_, message: Message):
 # Pin Messages
 
 
-@app.on_message(filters.command("pin") & ~filters.edited & ~filters.private)
+@app.on_message(filters.command(["pin", "unpin"]) & ~filters.edited & ~filters.private)
 @adminsOnly("can_pin_messages")
 async def pin(_, message: Message):
     if not message.reply_to_message:
-        return await message.reply_text("Reply to a message to pin it.")
+        return await message.reply_text("Reply to a message to pin/unpin it.")
     r = message.reply_to_message
+    if message.command[0][0] == "u":
+        await r.unpin()
+        return await message.reply_text(
+                       f"**Unpinned [this]({r.link}) message.**",
+                       disable_web_page_preview=True,
+        )
     await r.pin(disable_notification=True)
     await message.reply(
         f"**Pinned [this]({r.link}) message.**",
@@ -486,7 +486,7 @@ async def ban_deleted_accounts(_, message: Message):
     if len(deleted_users) > 0:
         for deleted_user in deleted_users:
             try:
-                await message.chat.kick_member(deleted_user)
+                await message.chat.ban_member(deleted_user)
             except Exception:
                 pass
             banned_users += 1
@@ -531,7 +531,7 @@ async def warn_user(_, message: Message):
     if message.command[0][0] == "d":
         await message.reply_to_message.delete()
     if warns >= 2:
-        await message.chat.kick_member(user_id)
+        await message.chat.ban_member(user_id)
         await message.reply_text(
             f"Number of warns of {mention} exceeded, BANNED!"
         )
